@@ -44,8 +44,13 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-black via-[#0a0a0a] to-[#1a1a1a] text-foreground;
     font-family: "Inter", system-ui, sans-serif;
+    background-image: url("https://cdn.poehali.dev/projects/9aeb176a-2aae-47d8-809e-0f5baa1a06c9/files/d0e92176-031d-45e2-8ac9-3b76fa3923a3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    @apply text-foreground;
   }
 
   h1,
@@ -80,5 +85,36 @@
 
   .hover-scale {
     @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  .glass-button {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid #32cd32;
+    box-shadow:
+      0 0 8px rgba(255, 255, 255, 0.15),
+      inset 0 0 20px rgba(50, 205, 50, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .glass-button:hover {
+    background: rgba(50, 205, 50, 0.1);
+    box-shadow:
+      0 0 12px rgba(255, 255, 255, 0.25),
+      inset 0 0 25px rgba(50, 205, 50, 0.15);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(50, 205, 50, 0.3);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+  }
+
+  .glass-card:hover {
+    border-color: #32cd32;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
   }
 }
