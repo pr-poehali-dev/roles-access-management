@@ -61,17 +61,17 @@ export default function Index() {
       <header className="backdrop-blur-md bg-black/30 sticky top-0 z-50 border-b border-white/10">
         <div className="container mx-auto px-6 py-5">
           <div className="flex items-center justify-between">
-            <div className="w-32 h-12 flex items-center justify-center glass-button">
+            <div className="w-32 h-12 flex items-center justify-center backdrop-blur-md bg-white/5 border border-white/10 rounded-xl">
               <span className="text-white/50 text-xs">LOGO</span>
             </div>
 
-            <nav className="flex items-center gap-8">
+            <nav className="flex items-center gap-6">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category === selectedCategory ? 'all' : category)}
-                  className={`glass-button px-6 py-2 text-sm font-medium transition-all ${
-                    selectedCategory === category ? 'text-[#32CD32]' : 'text-white hover:text-[#32CD32]'
+                  className={`glass-nav px-6 py-2 text-sm font-medium transition-all ${
+                    selectedCategory === category ? 'text-white bg-white/10' : 'text-gray-300 hover:text-white'
                   }`}
                 >
                   {category}
@@ -79,7 +79,7 @@ export default function Index() {
               ))}
             </nav>
 
-            <Button className="glass-button text-white hover:text-[#32CD32]">
+            <Button className="glass-button text-white font-medium">
               <Icon name="User" size={18} />
               Войти
             </Button>
@@ -93,18 +93,18 @@ export default function Index() {
             <h1 className="text-5xl md:text-6xl font-heading font-bold text-white mb-6">
               Цифровой маркетплейс
               <br />
-              <span className="text-[#32CD32]">для IT-профессионалов</span>
+              <span className="text-gray-300">для IT-профессионалов</span>
             </h1>
-            <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Покупайте и продавайте готовые IT-решения, цифровые товары, услуги и обучающие курсы.
               Всё для развития вашего бизнеса в одном месте.
             </p>
             <div className="flex gap-4 justify-center">
-              <Button className="glass-button text-white hover:text-[#32CD32] px-8 py-6 text-lg">
+              <Button className="glass-button text-white font-semibold px-8 py-6 text-lg">
                 Начать покупки
                 <Icon name="ArrowRight" size={20} />
               </Button>
-              <Button className="glass-button text-white hover:text-[#32CD32] px-8 py-6 text-lg">
+              <Button className="glass-button text-white font-semibold px-8 py-6 text-lg">
                 Стать продавцом
               </Button>
             </div>
@@ -118,7 +118,7 @@ export default function Index() {
             {selectedCategory === 'all' ? 'Все предложения' : selectedCategory}
           </h2>
           <div className="backdrop-blur-sm bg-black/20 px-6 py-3 rounded-xl border border-white/10 text-gray-200">
-            Найдено: <span className="text-[#32CD32] font-semibold">{filteredProducts.length}</span>
+            Найдено: <span className="text-white font-semibold">{filteredProducts.length}</span>
           </div>
         </div>
 
@@ -126,7 +126,7 @@ export default function Index() {
           {filteredProducts.map((product, index) => (
             <div
               key={product.id}
-              className="group glass-card overflow-hidden hover-scale animate-fade-in"
+              className="group glass-card overflow-hidden animate-fade-in"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
               <div className="aspect-[4/3] overflow-hidden">
@@ -138,17 +138,17 @@ export default function Index() {
               </div>
 
               <div className="p-5">
-                <h3 className="text-white font-semibold text-lg mb-4 group-hover:text-[#32CD32] transition-colors">
+                <h3 className="text-white font-semibold text-lg mb-4 group-hover:text-gray-200 transition-colors">
                   {product.title}
                 </h3>
 
                 <div className="flex items-center justify-between gap-3">
-                  <button className="text-gray-300 hover:text-[#32CD32] text-sm transition-colors flex items-center gap-1">
+                  <button className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-1">
                     Подробнее
                     <Icon name="ChevronRight" size={16} />
                   </button>
 
-                  <Button className="glass-button text-white hover:text-[#32CD32] text-sm font-semibold">
+                  <Button className="glass-button text-white text-sm font-semibold">
                     {product.price.toLocaleString('ru-RU')} ₽
                     <Icon name="ShoppingCart" size={16} />
                   </Button>
@@ -163,37 +163,37 @@ export default function Index() {
         <div className="container mx-auto px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h3 className="font-heading font-bold text-[#32CD32] text-xl mb-4">ITMarket</h3>
-              <p className="text-sm text-gray-300">
+              <h3 className="font-heading font-bold text-white text-xl mb-4">ITMarket</h3>
+              <p className="text-sm text-gray-400">
                 Маркетплейс цифровых товаров и IT-решений
               </p>
             </div>
             <div>
               <h4 className="font-semibold text-white mb-4">Компания</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li className="hover:text-[#32CD32] cursor-pointer transition-colors">О нас</li>
-                <li className="hover:text-[#32CD32] cursor-pointer transition-colors">Блог</li>
-                <li className="hover:text-[#32CD32] cursor-pointer transition-colors">Вакансии</li>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li className="hover:text-white cursor-pointer transition-colors">О нас</li>
+                <li className="hover:text-white cursor-pointer transition-colors">Блог</li>
+                <li className="hover:text-white cursor-pointer transition-colors">Вакансии</li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold text-white mb-4">Помощь</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li className="hover:text-[#32CD32] cursor-pointer transition-colors">FAQ</li>
-                <li className="hover:text-[#32CD32] cursor-pointer transition-colors">Поддержка</li>
-                <li className="hover:text-[#32CD32] cursor-pointer transition-colors">Правила</li>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li className="hover:text-white cursor-pointer transition-colors">FAQ</li>
+                <li className="hover:text-white cursor-pointer transition-colors">Поддержка</li>
+                <li className="hover:text-white cursor-pointer transition-colors">Правила</li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold text-white mb-4">Контакты</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li className="hover:text-[#32CD32] cursor-pointer transition-colors">Email</li>
-                <li className="hover:text-[#32CD32] cursor-pointer transition-colors">Telegram</li>
-                <li className="hover:text-[#32CD32] cursor-pointer transition-colors">VK</li>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li className="hover:text-white cursor-pointer transition-colors">Email</li>
+                <li className="hover:text-white cursor-pointer transition-colors">Telegram</li>
+                <li className="hover:text-white cursor-pointer transition-colors">VK</li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/10 pt-6 text-center text-sm text-gray-300">
+          <div className="border-t border-white/10 pt-6 text-center text-sm text-gray-400">
             <p>© 2026 ITMarket. Все права защищены.</p>
             <p className="mt-2">
               Мы используем файлы cookie и рекомендательные технологии для улучшения работы сайта
